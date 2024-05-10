@@ -59,7 +59,14 @@ RUN apt-get install --fix-missing --fix-broken -y \
 RUN curl -O -L https://download.qt.io/archive/qt/6.6/6.6.3/single/qt-everywhere-src-6.6.3.tar.xz \
 && tar -xf qt-everywhere-src-6.6.3.tar.xz \
 && cd qt-everywhere-src-6.6.3/ \
-&& ./configure -opensource -nomake examples -nomake tests -bundled-xcb-xinput -confirm-license \
+&& ./configure -opensource -nomake examples -nomake tests -nomake tools -bundled-xcb-xinput -confirm-license \
+    -skip qt5compat -skip qtactiveqt -skip qtcharts -skip qtcoap -skip qtconnectivity -skip qtdatavis3d \
+    -skip qtdeclarative -skip qtdoc -skip qtgraphs -skip qtgrpc -skip qthttpserver -skip qtlanguageserver \
+    -skip qtlocation -skip qtlottie -skip qtmqtt -skip qtmultimedia -skip qtnetworkauth -skip qtopcua \
+    -skip qtpositioning -skip qtquick3d -skip qtquick3dphysics -skip qtquickeffectmaker -skip qtquicktimeline \
+    -skip qtremoteobjects -skip qtscxml -skip qtsensors -skip qtserialbus -skip qtserialport -skip qtshadertools \
+    -skip qtspeech -skip qttools -skip qttranslations -skip qtvirtualkeyboard -skip qtwebchannel -skip qtwebengine \
+    -skip qtwebsockets -skip qtwebview \
 && cmake --build . --parallel \
 && cmake --install . \
 && cd ../ \

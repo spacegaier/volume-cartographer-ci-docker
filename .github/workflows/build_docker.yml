@@ -24,7 +24,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/educelab/ci-docker
+          images: ghcr.io/${{github.repository}}
           flavor: |
             latest=false
           tags: |
@@ -71,7 +71,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/educelab/ci-docker
+          images: ghcr.io/${{github.repository}}
           flavor: |
             latest=false
           tags: |

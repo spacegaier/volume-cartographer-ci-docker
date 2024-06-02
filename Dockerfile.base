@@ -72,5 +72,6 @@ RUN curl -O -L https://download.qt.io/archive/qt/6.6/6.6.3/single/qt-everywhere-
 && cd ../ \
 && rm -rf qt-*
 
+ENTRYPOINT ["export QT_PLUGIN_PATH=/usr/local/Qt-6.6.3/plugins"]
 # Start an interactive shell
 CMD ["/bin/bash"]
